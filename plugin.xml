@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="ca.footeware.propertiesbug.test.views.TestView"
+            icon="icons/ldebug_obj.gif"
+            id="ca.footeware.propertiesbug.test.view"
+            name="Properties Bug Test"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="ca.footeware.propertiesbug.test.view"
+               minimized="false"
+               ratio="0.8"
+               relationship="left"
+               relative="org.eclipse.ui.editorss">
+         </view>
+         <viewShortcut
+               id="ca.footeware.propertiesbug.test.view">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="ca.footeware.propertiesbug.test.model.Foo"
+            class="ca.footeware.propertiesbug.test.adapters.factories.FooAdapterFactory">
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySource">
+         </adapter>
+      </factory>
+      <factory
+            adaptableType="ca.footeware.propertiesbug.test.views.TestView"
+            class="ca.footeware.propertiesbug.test.adapters.factories.TestViewAdapterFactory">
+         <adapter
+               type="org.eclipse.ui.part.IContributedContentsView">
+         </adapter>
+         <adapter
+               type="org.eclipse.ui.views.properties.IPropertySheetPage">
+         </adapter>
+      </factory>
+   </extension>
+
+</plugin>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties Bug Test
+Bundle-SymbolicName: ca.footeware.propertiesbug.test;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ca.footeware.propertiesbug.test.internal.Activator
+Bundle-Vendor: Footeware.ca
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views;bundle-version="3.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: ca.footeware.propertiesbug.test.adapters,
+ ca.footeware.propertiesbug.test.adapters.factories,
+ ca.footeware.propertiesbug.test.internal;x-internal:=true,
+ ca.footeware.propertiesbug.test.model,
+ ca.footeware.propertiesbug.test.views
